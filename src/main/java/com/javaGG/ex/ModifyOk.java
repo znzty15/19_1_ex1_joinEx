@@ -64,13 +64,12 @@ public class ModifyOk extends HttpServlet {
       //id = request.getParameter("id");
       id = (String)httpsession.getAttribute("id");
       pw = request.getParameter("pw");
-      pw2 = (String)httpsession.getAttribute("pw"); 
       ph1 = request.getParameter("ph1");
       ph2 = request.getParameter("ph2");
       ph3 = request.getParameter("ph3");
       gender = request.getParameter("gender");
       
-      if(httpsession.getAttribute("pw").equals(pw)) {
+      if(pwCheck()) {
 	      String query =    "update members set name='" + name + "', ph1='" + ph1 + "', ph2='" + ph2 + "', ph3='" + ph3 + "', gender='" + gender + "' where id='" + id + "' ";
 	
 	      //try catch 문
@@ -105,6 +104,17 @@ public class ModifyOk extends HttpServlet {
     	  System.out.println("비밀번호가 틀립니다.");
     	  response.sendRedirect("modify.jsp");
       }
+   }
+   private boolean pwCheck() {
+	   boolean rs = false;
+	   //세션에 있는 값과 입력받은 값이 같은지 비교(비밀번호 맞는지 확인)
+	   String spw = (String)httpsession.getAttribute("pw");
+	   
+	   if(spw.equals(pw))
+		   rs = true;
+	   else
+		   rs = false;
+	   return rs;
    }
 
 }
