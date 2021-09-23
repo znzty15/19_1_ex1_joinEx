@@ -10,7 +10,7 @@
 	<%
 		session.invalidate();
 	%>
-	<h3>로그아웃 됬습니다.</h3><br>
-	<a href="login.html">로그인</a>
+	<h3>�α׾ƿ� �Ǿ����ϴ�.</h3>
+	<a href="login.html">�α���</a>
 </body>
 </html>

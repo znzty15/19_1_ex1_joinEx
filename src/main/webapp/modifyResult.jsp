@@ -8,6 +8,6 @@
 </head>
 <body>
 	<%= session.getAttribute("name") %>님의 정보수정이 정상적으로 처리되었습니다.<br>
-	<a href=logout.jsp">로그아웃</a>	
+	<a href=logout.jsp>로그아웃</a>	
 </body>
 </html>
